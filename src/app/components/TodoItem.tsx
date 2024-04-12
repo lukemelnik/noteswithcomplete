@@ -2,6 +2,7 @@
 "use client";
 import React from "react";
 import deleteTodo from "../actions/deleteTodo";
+import toggleCompleteTodo from "../actions/toggleCompleteTodo";
 
 type TodoItemProps = {
   todo: {
@@ -15,14 +16,16 @@ type TodoItemProps = {
 export default function TodoItem({ todo }: TodoItemProps) {
   return (
     <li key={todo.id} className="flex justify-between">
-      <div>
+      <div className="flex gap-2">
         <input
           type="checkbox"
+          className="cursor-pointer peer"
           defaultChecked={todo.complete}
-          className="mr-2"
-          onChange={() => toggleCompleteTodo(todo.id)}
+          onChange={() => toggleCompleteTodo(todo.id, todo.complete)}
         />
-        {todo.title}
+        <p className="cursor-pointer peer-checked:line-through peer-checked:text-gray-400">
+          {todo.title}
+        </p>
       </div>
       <button onClick={() => deleteTodo(todo.id)}>X</button>
     </li>
