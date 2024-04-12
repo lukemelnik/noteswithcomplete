@@ -10,6 +10,7 @@ type TodoItemProps = {
     title: string;
     complete: boolean;
     createdAt: Date;
+    updatedAt: Date;
   };
 };
 
@@ -34,7 +35,7 @@ export default function TodoItem({ todo }: TodoItemProps) {
         </div>
         <button onClick={() => deleteTodo(todo.id)}>X</button>
       </div>
-      <p>Created at: {todo.createdAt.toLocaleDateString()}</p>
+      <p>Created at: {todo.createdAt.toLocaleDateString("en-US")}</p>
     </li>
   );
 }
