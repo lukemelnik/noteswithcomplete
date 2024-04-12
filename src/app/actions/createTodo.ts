@@ -1,5 +1,6 @@
 /** @format */
 "use server";
+import { redirect } from "next/navigation";
 import db from "../db/db";
 
 export default async function createTodo(formData: FormData) {
@@ -9,4 +10,5 @@ export default async function createTodo(formData: FormData) {
       title,
     },
   });
+  redirect("/");
 }

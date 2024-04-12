@@ -3,14 +3,16 @@
 import Image from "next/image";
 import createTodo from "./actions/createTodo";
 import db from "./db/db";
+import getTodos from "./actions/getTodos";
+import TodoItem from "./components/TodoItem";
 
 export default async function Home() {
-  const todos = await db.todo.findMany();
+  const todos = await getTodos();
 
   return (
     <div className="m-20">
-      <h1 className="text-2xl font-extrabold">TODOS:</h1>
       <form action={createTodo} className="flex flex-col gap-3">
+        <h1 className="text-2xl font-extrabold">TODOS:</h1>
         <h3>Add todo:</h3>
         <div>
           <label className="mr-5" htmlFor="title">
@@ -28,19 +30,7 @@ export default async function Home() {
       </form>
       <ul className="mt-5">
         {todos.map((todo) => {
-          return (
-            <li key={todo.id} className="flex justify-between">
-              <div>
-                <input
-                  type="checkbox"
-                  defaultChecked={todo.complete}
-                  className="mr-2"
-                />
-                {todo.title}
-              </div>
-              <button>X</button>
-            </li>
-          );
+          return <TodoItem key={todo.id} todo={todo} />;
         })}
       </ul>
     </div>
