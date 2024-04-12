@@ -1,4 +1,4 @@
-## Notes app with the abilty to toggle complete (Using NextJS, Tailwind, Prisma) 
+## Notes app with the abilty to toggle complete (Using NextJS, Tailwind, Prisma, Typescript) 
 
 ### Takeaways: 
 
