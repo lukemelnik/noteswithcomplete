@@ -10,7 +10,7 @@
 
 2. Server actions need a redirect in order to show the updated data:
 
-```
+```js
    export default async function deleteTodo(id: string) {
      const deletedTodo = await db.todo.delete({
        where: {
@@ -22,7 +22,7 @@
 ```
 3. When the form action has multiple steps it has to be marked as async (as opposed to action={createTodo}:
 
-```
+```js
       action={async (FormData) => {
         createTodo(FormData);
         setNewTodo("");
