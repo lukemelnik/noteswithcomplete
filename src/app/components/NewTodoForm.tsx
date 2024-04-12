@@ -27,7 +27,7 @@ export default function NewTodoForm() {
           onChange={(e) => setNewTodo(e.target.value)}
         />
       </div>
-      <button className="bg-gray-300 text-gray-950 px-3 py-1 rounded">
+      <button className="bg-gray-300 text-gray-950 px-3 py-1 rounded w-1/2">
         Add
       </button>
     </form>

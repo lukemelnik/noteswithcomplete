@@ -1,6 +1,8 @@
-## Notes app with the abilty to toggle complete (Using NextJS, Tailwind, Prisma) 
+<!-- @format -->
 
-### Takeaways: 
+## Notes app with the abilty to toggle complete (Using NextJS, Tailwind, Prisma)
+
+### Takeaways:
 
 1. Had to be more specific about date formatting coming from the db, otherwise it caused a hydration error
 
@@ -20,7 +22,8 @@
      redirect("/");
    }
 ```
-3. When the form action has multiple steps it has to be marked as async (as opposed to action={createTodo}:
+
+3. When the form action has multiple steps it has to be marked as async (as opposed to action={createTodo}):
 
 ```
       action={async (FormData) => {
